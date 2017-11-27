@@ -1,3 +1,6 @@
+# Eggs
+venv_easy.egg-info/
+
 # VS-Code
 .vscode/
 
