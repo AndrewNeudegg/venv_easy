@@ -18,7 +18,7 @@ I found virtual environments (venv) a little frustrating to implement over and o
 
 ## Project Goals
 
-- [*] Automates python package [virtualenv](https://pypi.python.org/pypi/virtualenv) to create virtual environments.
+- [x] Automates python package [virtualenv](https://pypi.python.org/pypi/virtualenv) to create virtual environments.
 - [ ] Packaged for pypi.
 - [ ] Includes testing.
 - [ ] Compatibility support testing (currently the project has only been tested on Win64 Python3).
