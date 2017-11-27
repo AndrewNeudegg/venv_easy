@@ -1,0 +1,59 @@
+# Easy-Venv
+###### A virtual environment controller inspired by Flask Plugins.
+---
+
+I found virtual environments (venv) a little frustrating to implement over and over, so I created this package that will create a venv and install any dependancies listed.
+
+
+## Info
+
+* Status: First Draft.
+* Active Development: False.
+* Init Date: 27/11/2017
+* Citation: Andrew Neudegg, 27/11/2017.
+* Project Version: 0.0.0.
+* Project Revision: 1.
+* Documentation Version: 0.0.0.
+* Documentation Revision: 1.
+
+## Project Goals
+
+- [*] Automates python package [virtualenv](https://pypi.python.org/pypi/virtualenv) to create virtual environments.
+- [ ] Packaged for pypi.
+- [ ] Includes testing.
+- [ ] Compatibility support testing (currently the project has only been tested on Win64 Python3).
+
+## Howto:
+
+This plugin was inspired by the Flask plugin system, where code is just attatched at the head of the running script. Therefore, to get your code to run inside a new or existing venv you need only:
+```
+# Imports.
+from venv_easy import venv
+# Declare Object.
+env = venv()
+# Init Object.
+env._init_app(app=__name__, path=path)
+```
+This will create or load the venv and then continue executing your code. Alternatively, you can use following pattern:
+
+```
+# Imports.
+from venv_easy import venv
+# Declare and init object.
+env = venv(app=__name__, refresh_env=False, requirements=['django'], path=path)
+```
+
+## Arguments
+There are three optional arguments, one mandatory argument. 
+```
+app= # MANDATORY: Can be set to any value, but allows expansion into domain specific areas (ie. Flask).
+
+refresh_env= # OPTIONAL: Asserts whether or not to delete and re-create this virtual environment. Defualts to false.
+
+requirements= # OPTIONAL: Asserts dependancies to install when using a venv, this parameter is checked on every start. It can be set to a file, or a depenancy list (ie. ['Django', 'Flask', 'etc']). It uses pip for installation.
+
+path= # OPTIONAL: Asserts where the environment should be created / implemented, defualts to the current active directory.
+```
+
+## How to help:
+This project could use support in implementing cross-platform tests and general quality improvement. If you have any reccomendations or improvements please open a bug, or submit a pull request.
